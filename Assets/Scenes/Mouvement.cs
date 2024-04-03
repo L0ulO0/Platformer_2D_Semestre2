@@ -1,81 +1,195 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class mouvement : MonoBehaviour
 {
-    bool CanMouv = true;
+    [SerializeField] bool CanMouv = true;
+    [SerializeField] private float Direction; 
 
-    [SerializeField] int speed = 5;
-    //[SerializeField] Animator Player_animator;
-    bool Player_Run;
-    private float m_Thrust = 300f;
-    private bool jumped = true;
+    [SerializeField] bool Player_Run;
+    [SerializeField] private float m_Thrust = 400f;
+    [SerializeField] float speed = 4.5f;
+
+
+    // mechanics cinematics
+   public bool Freez = false;
+   
+    [SerializeField] Animator Player_animator;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D m_Rigidbody;
-    [SerializeField] bool isGrounded;
-    public bool Freez = false;
 
-    // Start is called before the first frame update
+    // mechanics isgrounded
+    [SerializeField] bool isGrounded = true;
+    [SerializeField] float groundCheckRadius;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask CollisionsLayer;
+    
+    // mechanics hide 
+    [SerializeField] private bool canHide = false;
+    [SerializeField] private bool hiding = false;
+
+    // mechanics checkppoint 
+    [SerializeField] private GameMaster GM;
+
+
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        //Player_animator = GetComponent<Animator>();
-        Mouvement();
-        Jump();
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        Player_animator = GetComponent<Animator>();
+    
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
 
 
         Mouvement();
         Jump();
-
+        Hide();
+        Die();
+       
 
     }
+
+    //ISGROUNDED
+
+    private void FixedUpdate()
+    {
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, CollisionsLayer);
+
+        if (isGrounded)
+        {
+            Player_animator.SetBool("booljump", false);
+            isGrounded = true;
+        }
+
+        else
+        {
+            Player_animator.SetBool("Booljump", true);
+            isGrounded = false; 
+        }
+
+        if(! hiding)
+        {
+            m_Rigidbody.velocity = new Vector2( Direction, m_Rigidbody.velocity.y); 
+        }
+        else
+        {
+            m_Rigidbody.velocity = Vector2.zero; 
+        }
+    }
+
+
+
+    // MOUVEMENT PLAYER 
 
     void Mouvement()
     {
 
 
+       // Direction = Input.GetAxisRaw("Horizontal") * Time.deltaTime;  
+
         if (Input.GetKey(KeyCode.RightArrow) && CanMouv)
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-            //Player_animator.SetBool("BoolRun", true);
-            spriteRenderer.flipX = true;
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            Player_animator.SetBool("BoolRun", true);
+            spriteRenderer.flipX = false;
 
         }
 
         else if (Input.GetKey(KeyCode.LeftArrow) && CanMouv)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-            //Player_animator.SetBool("BoolRun", true);
-          spriteRenderer.flipX = false;
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+          Player_animator.SetBool("BoolRun", true);
+          spriteRenderer.flipX = true;
         }
 
         else
         {
-           //Player_animator.SetBool("BoolRun", false);
+            Player_animator.SetBool("BoolRun", false);
             spriteRenderer.flipX = false;
         }
 
     }
 
+    // JUMP MECHANICS
+
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumped == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-            jumped = false;
-            //Player_animator.SetBool("BoolJump", true);
+            Debug.Log("canjump");
+            Player_animator.SetBool("BoolJump", true);
             m_Rigidbody.AddForce(Vector2.up * m_Thrust);
 
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow) && jumped == false)
+    }
+
+    // HIDING MECHANICS
+
+    void Hide()
+    {
+        if ( canHide && Input.GetKey(KeyCode.H))
         {
-            jumped = true;
-            //Player_animator.SetBool("BoolJump", false);
+            Debug.Log("hide");
+            Physics2D.IgnoreLayerCollision(9, 10, true);
+            spriteRenderer.sortingOrder = 0;
+            hiding = true; 
+            CanMouv = false;
+        }
+
+        else
+        {
+            Physics2D.IgnoreLayerCollision(9, 10, false);
+            spriteRenderer.sortingOrder = 2;
+            CanMouv = true;
+        }
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name.Equals("HidePlace"))
+        {
+            canHide = true; 
         }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name.Equals("HidePlace"))
+        {
+            canHide = false; 
+        }
+    }
+
+
+    // MECHANICS CHECKPOINT 
+    /*
+
+    void Checkpoint ( Transform checkpointTransform)
+    {
+        GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = GM.lastCheckPointPos;
+    }*/
+
+
+    void Die()
+    {
+        if ( Input.GetKeyDown(KeyCode.Space)/*other.GameObject.CompareTAg("Enemy")*/)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+    } 
 }
+    
