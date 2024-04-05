@@ -26,13 +26,19 @@ public class mouvement : MonoBehaviour
     [SerializeField] float groundCheckRadius;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask CollisionsLayer;
-    
+
+
     // mechanics hide 
     [SerializeField] private bool canHide = false;
     [SerializeField] private bool hiding = false;
 
     // mechanics checkppoint 
     [SerializeField] private GameMaster GM;
+
+
+
+    [SerializeField] BoxCollider2D PlayerCollider;
+    public bool sheHide; 
 
 
 
@@ -53,7 +59,7 @@ public class mouvement : MonoBehaviour
         Mouvement();
         Jump();
         Hide();
-        Die();
+       
        
 
     }
@@ -67,13 +73,13 @@ public class mouvement : MonoBehaviour
 
         if (isGrounded)
         {
-            Player_animator.SetBool("booljump", false);
+            Player_animator.SetBool("BoolJump", false);
             isGrounded = true;
         }
 
         else
         {
-            Player_animator.SetBool("Booljump", true);
+            Player_animator.SetBool("BoolJump", true);
             isGrounded = false; 
         }
 
@@ -126,11 +132,12 @@ public class mouvement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-            Debug.Log("canjump");
+           //debug.Log("canjump");
             Player_animator.SetBool("BoolJump", true);
             m_Rigidbody.AddForce(Vector2.up * m_Thrust);
 
         }
+
     }
 
     // HIDING MECHANICS
@@ -139,11 +146,15 @@ public class mouvement : MonoBehaviour
     {
         if ( canHide && Input.GetKey(KeyCode.H))
         {
-            Debug.Log("hide");
+           
             Physics2D.IgnoreLayerCollision(9, 10, true);
             spriteRenderer.sortingOrder = 0;
             hiding = true; 
             CanMouv = false;
+            sheHide = true; 
+
+            transform.gameObject.tag = "Hide";
+            //PlayerCollider.enabled = false;
         }
 
         else
@@ -151,6 +162,9 @@ public class mouvement : MonoBehaviour
             Physics2D.IgnoreLayerCollision(9, 10, false);
             spriteRenderer.sortingOrder = 2;
             CanMouv = true;
+            sheHide = false; 
+            //PlayerCollider.enabled = true;
+            transform.gameObject.tag = "Player";
         }
 
 
@@ -183,9 +197,9 @@ public class mouvement : MonoBehaviour
     }*/
 
 
-    void Die()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if ( Input.GetKeyDown(KeyCode.Space)/*other.GameObject.CompareTAg("Enemy")*/)
+        if ( other.gameObject.CompareTag("Enemy"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

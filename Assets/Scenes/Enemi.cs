@@ -9,8 +9,8 @@ public class Enemi : MonoBehaviour
 
 {
 
-    [SerializeField] float Direction;
-    [SerializeField] float moveSpeed = 5f; 
+    //erializeField] float Direction;
+   //SerializeField] float moveSpeed = 5f; 
     [SerializeField] Rigidbody2D m_Rigidbody;
     [SerializeField] GameObject VerificationDuHide;
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -21,7 +21,7 @@ public class Enemi : MonoBehaviour
 
         VerificationDuHide.SetActive(false);
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        Direction = -1f; 
+       //irection = -1f; 
 
     }
 
@@ -29,22 +29,12 @@ public class Enemi : MonoBehaviour
     void Update()
     {
         
-        if (transform.position.x<-9f)
-        {
-            Direction = 1f;
-            spriteRenderer.flipX = false;
-        }
 
-        else if (transform.position.x > 9f)
-        {
-            Direction = -1f;
-            spriteRenderer.flipX = true;
-        }
     }
 
     private void FixedUpdate()
     {
-        m_Rigidbody.velocity = new Vector2(Direction * moveSpeed, m_Rigidbody.velocity.y);
+       //_Rigidbody.velocity = new Vector2(Direction * moveSpeed, m_Rigidbody.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
