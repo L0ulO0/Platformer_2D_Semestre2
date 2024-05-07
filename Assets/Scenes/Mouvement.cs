@@ -38,7 +38,7 @@ public class mouvement : MonoBehaviour
 
 
     [SerializeField] BoxCollider2D PlayerCollider;
-    public bool sheHide; 
+    public bool sheHide = false; 
 
 
 
@@ -130,12 +130,17 @@ public class mouvement : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && hiding == false)
         {
            //debug.Log("canjump");
             Player_animator.SetBool("BoolJump", true);
             m_Rigidbody.AddForce(Vector2.up * m_Thrust);
 
+        }
+
+        else
+        {
+            Player_animator.SetBool("BoolJump", false);
         }
 
     }
@@ -157,10 +162,11 @@ public class mouvement : MonoBehaviour
             //PlayerCollider.enabled = false;
         }
 
-        else
+        if(Input.GetKeyUp(KeyCode.H))
         {
             Physics2D.IgnoreLayerCollision(9, 10, false);
             spriteRenderer.sortingOrder = 2;
+            hiding = false;
             CanMouv = true;
             sheHide = false; 
             //PlayerCollider.enabled = true;
@@ -204,6 +210,10 @@ public class mouvement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+       else if (other.gameObject.CompareTag("Thorn"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     } 
 }
     
