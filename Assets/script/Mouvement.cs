@@ -5,9 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement; 
 
 public class mouvement : MonoBehaviour
+
+    //////////////////////// VARIABLE /////////////////
 {
-    [SerializeField] bool CanMouv = true;
+    public bool CanMouv = true;
+
     [SerializeField] private float Direction; 
+
+    // Deplacement du player
 
     [SerializeField] bool Player_Run;
     [SerializeField] private float m_Thrust = 400f;
@@ -22,25 +27,25 @@ public class mouvement : MonoBehaviour
     [SerializeField] Rigidbody2D m_Rigidbody;
 
     // mechanics isgrounded
-    [SerializeField] bool isGrounded = true;
+    [SerializeField] bool isGrounded ;
+    [SerializeField] bool isJumping; 
     [SerializeField] float groundCheckRadius;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask CollisionsLayer;
 
 
     // mechanics hide 
-    [SerializeField] private bool canHide = false;
-    [SerializeField] private bool hiding = false;
+    [SerializeField]  bool canHide = false;
+    [SerializeField]  bool hiding = false;
 
     // mechanics checkppoint 
-    [SerializeField] private GameMaster GM;
+    [SerializeField] GameMaster GM;
 
-
-
-    [SerializeField] BoxCollider2D PlayerCollider;
+    [SerializeField] Collider2D PlayerCollider;
     public bool sheHide = false; 
 
 
+////////////////////////////////// FIN VARIABLE ///////////////////////////////
 
     void Start()
     {
@@ -71,7 +76,7 @@ public class mouvement : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, CollisionsLayer);
 
-        if (isGrounded)
+       /* if (isGrounded)
         {
             Player_animator.SetBool("BoolJump", false);
             isGrounded = true;
@@ -90,12 +95,12 @@ public class mouvement : MonoBehaviour
         else
         {
             m_Rigidbody.velocity = Vector2.zero; 
-        }
+        }*/
     }
 
 
 
-    // MOUVEMENT PLAYER 
+    ////////////////////// MOUVEMENT PLAYER ////////////////////////
 
     void Mouvement()
     {
@@ -121,7 +126,7 @@ public class mouvement : MonoBehaviour
         else
         {
             Player_animator.SetBool("BoolRun", false);
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
         }
 
     }
@@ -130,18 +135,20 @@ public class mouvement : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && hiding == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && hiding == false && CanMouv)
         {
-           //debug.Log("canjump");
-            Player_animator.SetBool("BoolJump", true);
+            Debug.Log("jump");
+            Player_animator.SetTrigger("TriggerJump");
+            Player_animator.SetBool("BoolRun", false);
             m_Rigidbody.AddForce(Vector2.up * m_Thrust);
+            canHide = false;
 
         }
 
-        else
+        /*else
         {
             Player_animator.SetBool("BoolJump", false);
-        }
+        }*/
 
     }
 
@@ -203,9 +210,9 @@ public class mouvement : MonoBehaviour
     }*/
 
 
-    private void OnCollisionEnter2D(Collision2D other)
+    /* private void OnTriggerEnter2D (Collider2D other) 
     {
-        if ( other.gameObject.CompareTag("Enemy"))
+       if ( other.gameObject.CompareTag("Enemy")&& hiding == false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -214,6 +221,13 @@ public class mouvement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-    } 
+    }*/
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+
 }
     
