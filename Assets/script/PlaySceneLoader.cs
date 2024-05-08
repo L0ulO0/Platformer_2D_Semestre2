@@ -9,5 +9,6 @@ public class bouton_Start : MonoBehaviour
     {
 
         SceneManager.LoadScene("SCN_Niveau1");
+        Debug.Log("load");
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Hide
   - Thorn
+  - MainCanvas
+  - OptionCanvas
   layers:
   - Default
   - TransparentFX
