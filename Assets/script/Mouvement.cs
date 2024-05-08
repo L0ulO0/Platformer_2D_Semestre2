@@ -145,6 +145,7 @@ public class mouvement : MonoBehaviour
 
         }
 
+      
         /*else
         {
             Player_animator.SetBool("BoolJump", false);
