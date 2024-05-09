@@ -34,7 +34,7 @@ public class Dialogue_trigger : MonoBehaviour
 
     private void TriggerDialogue()
     {
-
+        Dialogue_Manager.Instance.StartDialogue(dialogue);
     }
 
 }
