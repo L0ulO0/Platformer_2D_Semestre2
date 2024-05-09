@@ -15,7 +15,7 @@ public class mouvement : MonoBehaviour
     // Deplacement du player
 
     [SerializeField] bool Player_Run;
-    [SerializeField] private float m_Thrust = 400f;
+    [SerializeField] private float m_Thrust = 450f;
     [SerializeField] float speed = 4.5f;
 
 

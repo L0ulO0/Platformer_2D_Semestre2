@@ -11,12 +11,12 @@ public class PhoneScript : MonoBehaviour
     [SerializeField] GameObject Galerie;
     [SerializeField] GameObject options;
     [SerializeField] GameObject parametre;
-    [SerializeField] GameObject backButton;
+   // [SerializeField] GameObject backButton;
 
     public void MessageButton()
     {
         MainPhone.SetActive(false);
-        Message1.SetActive(true);
+       // Message1.SetActive(true);
         
        // if(other.Comparetag) comparer le compare tag pour afficher le message ou non
 
