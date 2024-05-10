@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
 
 public class Dialogue_trigger : MonoBehaviour
+
 {
     public Dialogue dialogue;
 
-    public bool isInRange; 
+    public bool isInRange;
+
+    private TextMeshProUGUI InteractUI;
+  
+
+
+    private void Awake()
+    {
+        InteractUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<TextMeshProUGUI>(); 
+    }
 
     void Update()
     {
@@ -21,6 +34,10 @@ public class Dialogue_trigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isInRange = true;
+
+            InteractUI.enabled = true;
+
+           
         }
     }
 
@@ -29,6 +46,11 @@ public class Dialogue_trigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isInRange = false;
+
+            InteractUI.enabled = false;
+
+            
+
         }
     }
 

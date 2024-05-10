@@ -6,6 +6,7 @@ using TMPro;
 
 public class Dialogue_Manager : MonoBehaviour
 {
+    [SerializeField] mouvement Mouvement;
 
     public TextMeshProUGUI nametext;
     public TextMeshProUGUI dialoguetext;
@@ -44,6 +45,9 @@ public class Dialogue_Manager : MonoBehaviour
         }
 
         DisplayNextSentence();
+
+       
+        Mouvement.CanMouv = false;
     }
 
     public void DisplayNextSentence()
@@ -73,7 +77,8 @@ public class Dialogue_Manager : MonoBehaviour
     void EndDialogue()
     {
 
-        animator.SetBool("BoolOpen", false);
+        animator.SetBool("BoolOpen", false); 
+        Mouvement.CanMouv = true;
         Debug.Log("Fin du dialogue");
     }
 }

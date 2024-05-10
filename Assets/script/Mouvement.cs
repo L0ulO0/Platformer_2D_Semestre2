@@ -39,7 +39,7 @@ public class mouvement : MonoBehaviour
     [SerializeField]  bool hiding = false;
 
     // mechanics checkppoint 
-    [SerializeField] GameMaster GM;
+   // [SerializeField] GameMaster GM;
 
     [SerializeField] Collider2D PlayerCollider;
     public bool sheHide = false; 

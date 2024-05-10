@@ -1,25 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class CheckPont2 : MonoBehaviour
+public class checkpoint : MonoBehaviour
 {
+    private Transform PlayerSpawn;
 
-    private GameMaster GM;
-    //[SerializeField] public Vector2 lastCheckPointPos;
-
-    void Start()
+    private void Awake()
     {
-        GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster> () ;
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            GM.lastCheckPointPos = transform.position;  
-        }
+        PlayerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn ").transform;
     }
 
+   private void OnTriggerEnter2D (Collider2D collision)
+    {
 
-
+    }
 }
