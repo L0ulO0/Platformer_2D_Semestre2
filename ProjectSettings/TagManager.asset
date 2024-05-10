@@ -11,6 +11,8 @@ TagManager:
   - Thorn
   - MainCanvas
   - OptionCanvas
+  - InteractUI
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX
