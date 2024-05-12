@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
-
+    [SerializeField] mouvement Mouvement;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SCN_Niveau1");
+            collision.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+
+            //Mouvement.CanMouv = false;
+
+            //SceneManager.LoadScene("SCN_Niveau1");
         }
     }
 }

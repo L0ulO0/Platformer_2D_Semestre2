@@ -12,6 +12,9 @@ public class checkpoint : MonoBehaviour
 
    private void OnTriggerEnter2D (Collider2D collision)
     {
-
+        if (collision.CompareTag("Player"))
+        {
+            PlayerSpawn.position = transform.position;  
+        }
     }
 }
