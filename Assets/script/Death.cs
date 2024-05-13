@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
-    [SerializeField] mouvement Mouvement;
+    [SerializeField] Mouvement Mouvement;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

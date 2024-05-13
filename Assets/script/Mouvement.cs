@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
-public class mouvement : MonoBehaviour
+public class Mouvement : MonoBehaviour
 
     //////////////////////// VARIABLE /////////////////
 {
@@ -15,7 +15,9 @@ public class mouvement : MonoBehaviour
     // Deplacement du player
 
     [SerializeField] bool Player_Run;
-    [SerializeField] private float m_Thrust = 450f;
+    [SerializeField] float m_Thrust = 12f;
+    [SerializeField] float GravityScale= 1f;
+    [SerializeField] float fallGravityScale = 3f;
     [SerializeField] float speed = 4.5f;
 
 
@@ -42,10 +44,12 @@ public class mouvement : MonoBehaviour
    // [SerializeField] GameMaster GM;
 
     [SerializeField] Collider2D PlayerCollider;
-    public bool sheHide = false; 
+    public bool sheHide = false;
+
+    public LayerMask Player_Hitbox_LayerMask;
 
 
-////////////////////////////////// FIN VARIABLE ///////////////////////////////
+    ////////////////////////////////// FIN VARIABLE ///////////////////////////////
 
     void Start()
     {
@@ -61,11 +65,14 @@ public class mouvement : MonoBehaviour
     {
 
 
-        Mouvement();
+        mouvement();
         Jump();
         Hide();
        
-       
+       if(!hiding)
+        {
+            Enemy_Awakening_Box();
+        }
 
     }
 
@@ -98,11 +105,30 @@ public class mouvement : MonoBehaviour
         }*/
     }
 
+    private void Enemy_Awakening_Box()
+    {
+
+        Collider2D[] Enemey_found = Physics2D.OverlapBoxAll(this.transform.position, new Vector2(15, 5), Player_Hitbox_LayerMask);
+
+        foreach (var Object in Enemey_found)
+        {
+
+            if (Object.tag == "Prefab_ia")
+            {
+
+                if (Object.GetComponent<Script_PatrolingAi_Prefab>().Get_Alive())
+                {
+
+                    Object.GetComponent<Script_PatrolingAi_Prefab>().Assign_Player(this.transform);
+                }
+            }
+        }
+    }
 
 
     ////////////////////// MOUVEMENT PLAYER ////////////////////////
 
-    void Mouvement()
+    void mouvement()
     {
 
 
@@ -140,8 +166,20 @@ public class mouvement : MonoBehaviour
             Debug.Log("jump");
             Player_animator.SetTrigger("TriggerJump");
             Player_animator.SetBool("BoolRun", false);
-            m_Rigidbody.AddForce(Vector2.up * m_Thrust);
+            m_Rigidbody.velocity = Vector2.zero;
+            m_Rigidbody.AddForce(Vector2.up * m_Thrust,ForceMode2D.Impulse);
             canHide = false;
+
+            if (m_Rigidbody.velocity.y > 0)
+            {
+                Debug.Log("1");
+                m_Rigidbody.gravityScale = GravityScale;
+            }
+            else
+            {
+               Debug.Log("2");
+               m_Rigidbody.gravityScale = fallGravityScale;
+            }
 
         }
 

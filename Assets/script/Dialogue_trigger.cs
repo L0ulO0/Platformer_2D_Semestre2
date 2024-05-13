@@ -8,12 +8,16 @@ using Unity.VisualScripting;
 public class Dialogue_trigger : MonoBehaviour
 
 {
+    [SerializeField] Mouvement Mouvement;
+
     public Dialogue dialogue;
 
     public bool isInRange;
 
     private TextMeshProUGUI InteractUI;
-  
+
+
+    private GameObject NextButton;
 
 
     private void Awake()
@@ -25,6 +29,7 @@ public class Dialogue_trigger : MonoBehaviour
     {
         if(isInRange && Input.GetKeyDown(KeyCode.E)) 
         {
+            Mouvement.CanMouv = false;
             TriggerDialogue();
         }
     }

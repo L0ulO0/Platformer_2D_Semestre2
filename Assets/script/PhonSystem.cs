@@ -8,7 +8,7 @@ public class PhonSystem : MonoBehaviour
     [SerializeField] GameObject phone;
     [SerializeField] bool phoneOpen = false;
 
-    [SerializeField] mouvement mouvement;
+    [SerializeField] Mouvement mouvement;
     // Start is called before the first frame update
     void Start()
     {

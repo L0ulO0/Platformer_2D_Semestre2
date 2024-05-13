@@ -28,7 +28,7 @@ public class IAenemi : MonoBehaviour
     [SerializeField] private Vector2 currentPosition;
     [SerializeField] float distance;
 
-    [SerializeField] mouvement Mouvement; 
+    [SerializeField] Mouvement Mouvement; 
 
     /* [SerializeField] GameObject Player;
      [SerializeField] private Transform PlayerPosition;
