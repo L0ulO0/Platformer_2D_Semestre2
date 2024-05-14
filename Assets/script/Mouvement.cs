@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement; 
 
 public class Mouvement : MonoBehaviour
@@ -10,25 +13,28 @@ public class Mouvement : MonoBehaviour
 {
     public bool CanMouv = true;
 
-    [SerializeField] private float Direction; 
+    [SerializeField] private float Direction;
 
     // Deplacement du player
 
+    [Header("statistic")]
     [SerializeField] bool Player_Run;
     [SerializeField] float m_Thrust = 12f;
     [SerializeField] float GravityScale= 1f;
     [SerializeField] float fallGravityScale = 3f;
-    [SerializeField] float speed = 4.5f;
+    [SerializeField] float speed =100f;
 
 
     // mechanics cinematics
    public bool Freez = false;
-   
+
+    [Header("assignation")]
     [SerializeField] Animator Player_animator;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D m_Rigidbody;
 
     // mechanics isgrounded
+    [Header("ground debug")]
     [SerializeField] bool isGrounded ;
     [SerializeField] bool isJumping; 
     [SerializeField] float groundCheckRadius;
@@ -37,8 +43,9 @@ public class Mouvement : MonoBehaviour
 
 
     // mechanics hide 
+    [Header("hide debug")]
     [SerializeField]  bool canHide = false;
-    [SerializeField]  bool hiding = false;
+    [SerializeField]  bool hiding ;
 
     // mechanics checkppoint 
    // [SerializeField] GameMaster GM;
@@ -49,7 +56,49 @@ public class Mouvement : MonoBehaviour
     public LayerMask Player_Hitbox_LayerMask;
 
 
+
+    // input manette
+
+    private Input_manette input_manette;
+
+    public Vector2 Input_Direction;
+
     ////////////////////////////////// FIN VARIABLE ///////////////////////////////
+
+    private void Awake()
+    {
+        input_manette = new Input_manette();
+        hiding = false;
+    }
+
+
+
+    private void OnEnable()
+    {
+        input_manette.Mouvement.Run.Enable();
+        input_manette.Mouvement.Jump.Enable();
+        input_manette.Mouvement.Hide.Enable();
+        input_manette.Mouvement.Phone.Enable();
+
+        input_manette.Mouvement.Jump.performed += Jump;
+        input_manette.Mouvement.Hide.performed += Hide;
+        input_manette.Mouvement.Phone.performed += Phone;
+    }
+
+   
+
+    private void Phone(InputAction.CallbackContext context)
+    {
+       
+    }
+
+    private void OnDisable()
+    {
+        input_manette.Mouvement.Run.Disable();
+        input_manette.Mouvement.Jump.Disable();
+        input_manette.Mouvement.Hide.Disable();
+        input_manette.Mouvement.Phone.Disable();
+    }
 
     void Start()
     {
@@ -66,8 +115,7 @@ public class Mouvement : MonoBehaviour
 
 
         mouvement();
-        Jump();
-        Hide();
+       
        
        if(!hiding)
         {
@@ -131,37 +179,61 @@ public class Mouvement : MonoBehaviour
     void mouvement()
     {
 
+        Input_Direction = input_manette.Mouvement.Run.ReadValue<Vector2>();
+        Vector2 Player_Velocity = m_Rigidbody.velocity;
 
-       // Direction = Input.GetAxisRaw("Horizontal") * Time.deltaTime;  
+        Player_Velocity.x = ((speed * Time.deltaTime)* Input_Direction.x);
+        m_Rigidbody.velocity = Player_Velocity;
 
-        if (Input.GetKey(KeyCode.RightArrow) && CanMouv)
+        if (m_Rigidbody.velocity.x > 0.01)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-            Player_animator.SetBool("BoolRun", true);
+
             spriteRenderer.flipX = false;
+            Player_animator.SetBool("BoolRun", true);
 
         }
-
-        else if (Input.GetKey(KeyCode.LeftArrow) && CanMouv)
+        else if (m_Rigidbody.velocity.x < -0.01)
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-          Player_animator.SetBool("BoolRun", true);
-          spriteRenderer.flipX = true;
+
+            spriteRenderer.flipX = true;
+            Player_animator.SetBool("BoolRun", true);
         }
 
         else
         {
             Player_animator.SetBool("BoolRun", false);
-            //spriteRenderer.flipX = false;
         }
+
+        // Direction = Input.GetAxisRaw("Horizontal") * Time.deltaTime;  
+
+        //if (Input.GetKey(KeyCode.RightArrow) && CanMouv)
+        //{
+        //    transform.Translate(Vector3.right * speed * Time.deltaTime);
+        //    Player_animator.SetBool("BoolRun", true);
+        //    spriteRenderer.flipX = false;
+
+        //}
+
+        //else if (Input.GetKey(KeyCode.LeftArrow) && CanMouv)
+        //{
+        //    transform.Translate(Vector3.left * speed * Time.deltaTime);
+        //  Player_animator.SetBool("BoolRun", true);
+        //  spriteRenderer.flipX = true;
+        //}
+
+        //else
+        //{
+        //    Player_animator.SetBool("BoolRun", false);
+        //    //spriteRenderer.flipX = false;
+        //}
 
     }
 
     // JUMP MECHANICS
 
-    void Jump()
+    void Jump(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && hiding == false && CanMouv)
+        if ( isGrounded && hiding == false && CanMouv)
         {
             Debug.Log("jump");
             Player_animator.SetTrigger("TriggerJump");
@@ -193,32 +265,34 @@ public class Mouvement : MonoBehaviour
 
     // HIDING MECHANICS
 
-    void Hide()
+    void Hide(InputAction.CallbackContext context)
+
+
     {
-        if ( canHide && Input.GetKey(KeyCode.H))
+        if (canHide && hiding == false)
         {
-           
+
             Physics2D.IgnoreLayerCollision(9, 10, true);
             spriteRenderer.sortingOrder = 0;
-            hiding = true; 
+            hiding = true;
             CanMouv = false;
-            sheHide = true; 
+            sheHide = true;
 
             transform.gameObject.tag = "Hide";
             //PlayerCollider.enabled = false;
         }
 
-        if(Input.GetKeyUp(KeyCode.H))
+         else if (hiding == true)
         {
+
             Physics2D.IgnoreLayerCollision(9, 10, false);
             spriteRenderer.sortingOrder = 2;
             hiding = false;
             CanMouv = true;
-            sheHide = false; 
+            sheHide = false;
             //PlayerCollider.enabled = true;
             transform.gameObject.tag = "Player";
         }
-
 
     }
 
