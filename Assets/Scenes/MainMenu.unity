@@ -1823,9 +1823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1d35bed144acf42a964fc93dd4c294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCanvas: {fileID: 0}
-  OptionCanvas: {fileID: 0}
-  Pancarte: {fileID: 0}
+  MainCanvas: {fileID: 1973854527}
+  OptionCanvas: {fileID: 657658957}
+  Pancarte: {fileID: 90942775}
 --- !u!1 &657658957
 GameObject:
   m_ObjectHideFlags: 0
