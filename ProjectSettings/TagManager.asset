@@ -16,6 +16,7 @@ TagManager:
   - Patrol
   - Prefab_ia
   - InteractUI_Hide
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

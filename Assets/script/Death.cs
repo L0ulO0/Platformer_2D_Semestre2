@@ -13,9 +13,6 @@ public class Death : MonoBehaviour
         {
             collision.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
 
-            //Mouvement.CanMouv = false;
-
-            //SceneManager.LoadScene("SCN_Niveau1");
         }
     }
 }

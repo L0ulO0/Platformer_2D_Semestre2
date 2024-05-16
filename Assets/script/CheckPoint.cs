@@ -3,18 +3,41 @@ using UnityEngine;
 
 public class checkpoint : MonoBehaviour
 {
-    private Transform PlayerSpawn;
 
-    private void Awake()
-    {
-        PlayerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn ").transform;
+    [SerializeField] private Vector2 Respawn;
+
+    [SerializeField] Transform IA;
+    [SerializeField] Transform RespawnIA;
+
+
+    void Start()
+    { 
+
+        Respawn = transform.position;
+
     }
-
-   private void OnTriggerEnter2D (Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
+
+
+        if (other.gameObject.CompareTag("CheckPoint"))
         {
-            PlayerSpawn.position = transform.position;  
+
+
+            Respawn = transform.position;
+
+
         }
+        else if (other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Prefab_ia"))
+        {
+
+            transform.position = Respawn;
+
+            IA.transform.position = RespawnIA.transform.position; 
+          
+
+        }
+
     }
+
 }
