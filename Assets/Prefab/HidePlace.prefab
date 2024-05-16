@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8138613280250522604}
   - component: {fileID: 4452943925521975119}
   - component: {fileID: 3793819935927440082}
+  - component: {fileID: 4828184954551488261}
   m_Layer: 0
   m_Name: HidePlace
   m_TagString: HidePlace
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4d63c175e81a34c4b9ed8449f6d8f779, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49507797, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.007883, y: 2.4055314}
   m_EdgeRadius: 0
+--- !u!114 &4828184954551488261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228407261181117514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c87616de7444e4d804a1707534fc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInRange: 0

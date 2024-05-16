@@ -62,6 +62,15 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""21a688b1-6d1a-4fcb-aec0-8b8d148a7c27"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""action"": ""Phone"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29210d6c-18fa-40b1-bd80-f1d8d44a4db1"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -214,6 +234,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
         m_Mouvement_Jump = m_Mouvement.FindAction("Jump", throwIfNotFound: true);
         m_Mouvement_Hide = m_Mouvement.FindAction("Hide", throwIfNotFound: true);
         m_Mouvement_Phone = m_Mouvement.FindAction("Phone", throwIfNotFound: true);
+        m_Mouvement_Interact = m_Mouvement.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -279,6 +300,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
     private readonly InputAction m_Mouvement_Jump;
     private readonly InputAction m_Mouvement_Hide;
     private readonly InputAction m_Mouvement_Phone;
+    private readonly InputAction m_Mouvement_Interact;
     public struct MouvementActions
     {
         private @Input_manette m_Wrapper;
@@ -287,6 +309,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Mouvement_Jump;
         public InputAction @Hide => m_Wrapper.m_Mouvement_Hide;
         public InputAction @Phone => m_Wrapper.m_Mouvement_Phone;
+        public InputAction @Interact => m_Wrapper.m_Mouvement_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Mouvement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +331,9 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
             @Phone.started += instance.OnPhone;
             @Phone.performed += instance.OnPhone;
             @Phone.canceled += instance.OnPhone;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IMouvementActions instance)
@@ -324,6 +350,9 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
             @Phone.started -= instance.OnPhone;
             @Phone.performed -= instance.OnPhone;
             @Phone.canceled -= instance.OnPhone;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IMouvementActions instance)
@@ -356,5 +385,6 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnHide(InputAction.CallbackContext context);
         void OnPhone(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
