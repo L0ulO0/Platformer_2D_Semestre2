@@ -16061,6 +16061,7 @@ GameObject:
   - component: {fileID: 1906632331}
   - component: {fileID: 1906632330}
   - component: {fileID: 1906632332}
+  - component: {fileID: 1906632333}
   m_Layer: 0
   m_Name: Loup
   m_TagString: Untagged
@@ -16180,6 +16181,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.212555, y: 10.8}
   m_EdgeRadius: 0
+--- !u!114 &1906632333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906632329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8603efcaafffa44b748560fe415074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910144252
 GameObject:
   m_ObjectHideFlags: 0

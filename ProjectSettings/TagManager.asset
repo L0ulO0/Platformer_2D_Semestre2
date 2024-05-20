@@ -17,6 +17,7 @@ TagManager:
   - Prefab_ia
   - InteractUI_Hide
   - CheckPoint
+  - InteractUI2
   layers:
   - Default
   - TransparentFX
