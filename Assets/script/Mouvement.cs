@@ -25,6 +25,7 @@ public class Mouvement : MonoBehaviour
     [SerializeField] float speed =100f;
 
 
+
     // mechanics cinematics
    public bool Freez = false;
 
@@ -105,7 +106,8 @@ public class Mouvement : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>(); 
         Player_animator = GetComponent<Animator>();
-    
+
+
     }
 
 
