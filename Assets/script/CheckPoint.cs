@@ -25,6 +25,7 @@ public class checkpoint : MonoBehaviour
 
 
             Respawn = transform.position;
+            Debug.Log(" REZZ");
 
 
         }
@@ -33,6 +34,7 @@ public class checkpoint : MonoBehaviour
 
             transform.position = Respawn;
 
+            Debug.Log(" REZZ");
             IA.transform.position = RespawnIA.transform.position; 
           
 

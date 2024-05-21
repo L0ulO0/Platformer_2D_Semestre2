@@ -177,19 +177,19 @@ public class Mouvement_2 : MonoBehaviour
         {
 
             spriteRenderer.flipX = false;
-            Player_animator.SetBool("BoolRun", true);
+            Player_animator.SetBool("BoolBoitement", true);
 
         }
         else if (m_Rigidbody.velocity.x < -0.01)
         {
 
             spriteRenderer.flipX = true;
-            Player_animator.SetBool("BoolRun", true);
+            Player_animator.SetBool("BoolBoitement", true);
         }
 
         else
         {
-            Player_animator.SetBool("BoolRun", false);
+            Player_animator.SetBool("BoolBoitement", false);
         }
 
         

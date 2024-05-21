@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7234557013016879041}
   m_Layer: 0
   m_Name: thorn bush
-  m_TagString: Untagged
+  m_TagString: Thorn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mouvement: {fileID: 0}
+  IA: {fileID: 0}
+  RespawnIA: {fileID: 0}
