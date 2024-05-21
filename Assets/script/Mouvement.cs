@@ -181,6 +181,8 @@ public class Mouvement : MonoBehaviour
     void mouvement()
     {
 
+        CanMouv = true;
+
         Input_Direction = input_manette.Mouvement.Run.ReadValue<Vector2>();
         Vector2 Player_Velocity = m_Rigidbody.velocity;
 
@@ -205,7 +207,7 @@ public class Mouvement : MonoBehaviour
         {
             Player_animator.SetBool("BoolRun", false);
         }
-
+        
         // Direction = Input.GetAxisRaw("Horizontal") * Time.deltaTime;  
 
         //if (Input.GetKey(KeyCode.RightArrow) && CanMouv)
