@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class cutScene_Out2 : MonoBehaviour
+public class cutScene_Out3 : MonoBehaviour
 {
     public float changeTime;
 
@@ -15,7 +15,7 @@ public class cutScene_Out2 : MonoBehaviour
 
         if (changeTime < -0)
         {
-           // SceneManager.LoadScene("SCN_Niveau3");
+            SceneManager.LoadScene("SCN_Niveau3");
         }
 
     }

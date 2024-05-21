@@ -1735,7 +1735,7 @@ PrefabInstance:
     - target: {fileID: 8921760737161700042, guid: a388cd6e19ccfcf4bac2413b0c1356d3,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: 'I can''t bellive that the summer holiday end in one week! '
+      value: 'I can''t bellive that the summer holiday ends in one week! '
       objectReference: {fileID: 0}
     - target: {fileID: 8921760737161700042, guid: a388cd6e19ccfcf4bac2413b0c1356d3,
         type: 3}
@@ -5908,7 +5908,7 @@ MonoBehaviour:
     name: BICHE
     sentences:
     - well... try to have some fun tonight okay?
-    - 'I''m here if you need, '
+    - I'm here if you need
   isInRange: 0
 --- !u!95 &1286190943
 Animator:
@@ -7527,7 +7527,7 @@ PrefabInstance:
     - target: {fileID: 8921760737161700042, guid: a388cd6e19ccfcf4bac2413b0c1356d3,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'but you now, I can''t wait tho see the new drama '
+      value: 'but you know, I can''t wait tho see the new drama '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8403,7 +8403,7 @@ PrefabInstance:
     - target: {fileID: 8921760737161700042, guid: a388cd6e19ccfcf4bac2413b0c1356d3,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: 'but you now, I can''t wait tho see the new drama '
+      value: You two had a fight recently...?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

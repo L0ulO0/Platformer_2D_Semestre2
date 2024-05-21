@@ -5,11 +5,11 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
-public class Mouvement : MonoBehaviour
+public class Mouvement_2 : MonoBehaviour
 
-    //////////////////////// VARIABLE /////////////////
+//////////////////////// VARIABLE /////////////////
 {
     public bool CanMouv = true;
 
@@ -19,15 +19,15 @@ public class Mouvement : MonoBehaviour
 
     [Header("statistic")]
     [SerializeField] bool Player_Run;
-    [SerializeField] float m_Thrust = 12f;
-    [SerializeField] float GravityScale= 1f;
-    [SerializeField] float fallGravityScale = 3f;
-    [SerializeField] float speed =100f;
+    //[SerializeField] float m_Thrust = 12f;
+    //[SerializeField] float GravityScale = 1f;
+    //[SerializeField] float fallGravityScale = 3f;
+    [SerializeField] float speed = 50f;
 
 
 
     // mechanics cinematics
-   public bool Freez = false;
+    public bool Freez = false;
 
     [Header("assignation")]
     [SerializeField] Animator Player_animator;
@@ -36,8 +36,8 @@ public class Mouvement : MonoBehaviour
 
     // mechanics isgrounded
     [Header("ground debug")]
-    [SerializeField] bool isGrounded ;
-    [SerializeField] bool isJumping; 
+    [SerializeField] bool isGrounded;
+    //[SerializeField] bool isJumping;
     [SerializeField] float groundCheckRadius;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask CollisionsLayer;
@@ -45,11 +45,11 @@ public class Mouvement : MonoBehaviour
 
     // mechanics hide 
     [Header("hide debug")]
-    [SerializeField]  bool canHide = false;
-    [SerializeField]  bool hiding ;
+    [SerializeField] bool canHide = false;
+    [SerializeField] bool hiding;
 
     // mechanics checkppoint 
-   // [SerializeField] GameMaster GM;
+    // [SerializeField] GameMaster GM;
 
     [SerializeField] Collider2D PlayerCollider;
     public bool sheHide = false;
@@ -77,26 +77,26 @@ public class Mouvement : MonoBehaviour
     private void OnEnable()
     {
         input_manette.Mouvement.Run.Enable();
-        input_manette.Mouvement.Jump.Enable();
+        //input_manette.Mouvement.Jump.Enable();
         input_manette.Mouvement.Hide.Enable();
         input_manette.Mouvement.Phone.Enable();
 
-        input_manette.Mouvement.Jump.performed += Jump;
+       // input_manette.Mouvement.Jump.performed += Jump;
         input_manette.Mouvement.Hide.performed += Hide;
         input_manette.Mouvement.Phone.performed += Phone;
     }
 
-   
+
 
     private void Phone(InputAction.CallbackContext context)
     {
-       
+
     }
 
     private void OnDisable()
     {
         input_manette.Mouvement.Run.Disable();
-        input_manette.Mouvement.Jump.Disable();
+       // input_manette.Mouvement.Jump.Disable();
         input_manette.Mouvement.Hide.Disable();
         input_manette.Mouvement.Phone.Disable();
     }
@@ -104,7 +104,7 @@ public class Mouvement : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        spriteRenderer = GetComponent<SpriteRenderer>();
         Player_animator = GetComponent<Animator>();
 
 
@@ -114,12 +114,12 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-
-
-        if (CanMouv)
+        if(CanMouv)
         {
             mouvement();
         }
+
+        
 
 
         if (!hiding)
@@ -136,26 +136,7 @@ public class Mouvement : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, CollisionsLayer);
 
-       /* if (isGrounded)
-        {
-            Player_animator.SetBool("BoolJump", false);
-            isGrounded = true;
-        }
-
-        else
-        {
-            Player_animator.SetBool("BoolJump", true);
-            isGrounded = false; 
-        }
-
-        if(! hiding)
-        {
-            m_Rigidbody.velocity = new Vector2( Direction, m_Rigidbody.velocity.y); 
-        }
-        else
-        {
-            m_Rigidbody.velocity = Vector2.zero; 
-        }*/
+      
     }
 
     private void Enemy_Awakening_Box()
@@ -184,12 +165,12 @@ public class Mouvement : MonoBehaviour
     void mouvement()
     {
 
-        CanMouv = true;
+        
 
         Input_Direction = input_manette.Mouvement.Run.ReadValue<Vector2>();
         Vector2 Player_Velocity = m_Rigidbody.velocity;
 
-        Player_Velocity.x = ((speed * Time.deltaTime)* Input_Direction.x);
+        Player_Velocity.x = ((speed * Time.deltaTime) * Input_Direction.x);
         m_Rigidbody.velocity = Player_Velocity;
 
         if (m_Rigidbody.velocity.x > 0.01)
@@ -210,43 +191,21 @@ public class Mouvement : MonoBehaviour
         {
             Player_animator.SetBool("BoolRun", false);
         }
+
         
-        // Direction = Input.GetAxisRaw("Horizontal") * Time.deltaTime;  
-
-        //if (Input.GetKey(KeyCode.RightArrow) && CanMouv)
-        //{
-        //    transform.Translate(Vector3.right * speed * Time.deltaTime);
-        //    Player_animator.SetBool("BoolRun", true);
-        //    spriteRenderer.flipX = false;
-
-        //}
-
-        //else if (Input.GetKey(KeyCode.LeftArrow) && CanMouv)
-        //{
-        //    transform.Translate(Vector3.left * speed * Time.deltaTime);
-        //  Player_animator.SetBool("BoolRun", true);
-        //  spriteRenderer.flipX = true;
-        //}
-
-        //else
-        //{
-        //    Player_animator.SetBool("BoolRun", false);
-        //    //spriteRenderer.flipX = false;
-        //}
-
     }
 
     // JUMP MECHANICS
 
-    void Jump(InputAction.CallbackContext context)
+    /*void Jump(InputAction.CallbackContext context)
     {
-        if ( isGrounded && hiding == false && CanMouv)
+        if (isGrounded && hiding == false && CanMouv)
         {
             Debug.Log("jump");
             Player_animator.SetTrigger("TriggerJump");
             Player_animator.SetBool("BoolRun", false);
             m_Rigidbody.velocity = Vector2.zero;
-            m_Rigidbody.AddForce(Vector2.up * m_Thrust,ForceMode2D.Impulse);
+            m_Rigidbody.AddForce(Vector2.up * m_Thrust, ForceMode2D.Impulse);
             canHide = false;
 
             if (m_Rigidbody.velocity.y > 0)
@@ -256,19 +215,19 @@ public class Mouvement : MonoBehaviour
             }
             else
             {
-               Debug.Log("2");
-               m_Rigidbody.gravityScale = fallGravityScale;
+                Debug.Log("2");
+                m_Rigidbody.gravityScale = fallGravityScale;
             }
 
         }
 
-      
+
         /*else
         {
             Player_animator.SetBool("BoolJump", false);
-        }*/
+        }
+    }*/
 
-    }
 
     // HIDING MECHANICS
 
@@ -289,7 +248,7 @@ public class Mouvement : MonoBehaviour
             //PlayerCollider.enabled = false;
         }
 
-         else if (hiding == true)
+        else if (hiding == true)
         {
 
             Physics2D.IgnoreLayerCollision(9, 10, false);
@@ -307,7 +266,7 @@ public class Mouvement : MonoBehaviour
     {
         if (other.gameObject.name.Equals("HidePlace"))
         {
-            canHide = true; 
+            canHide = true;
         }
     }
 
@@ -315,33 +274,11 @@ public class Mouvement : MonoBehaviour
     {
         if (other.gameObject.name.Equals("HidePlace"))
         {
-            canHide = false; 
+            canHide = false;
         }
     }
 
 
-    // MECHANICS CHECKPOINT 
-    /*
-
-    void Checkpoint ( Transform checkpointTransform)
-    {
-        GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
-        transform.position = GM.lastCheckPointPos;
-    }*/
-
-
-    /* private void OnTriggerEnter2D (Collider2D other) 
-    {
-       if ( other.gameObject.CompareTag("Enemy")&& hiding == false)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-       else if (other.gameObject.CompareTag("Thorn"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }*/
 
     private void OnDrawGizmos()
     {
@@ -350,4 +287,3 @@ public class Mouvement : MonoBehaviour
     }
 
 }
-    

@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SCN_Niveau2.unity
     guid: 58ed5e17b30b4944797db66c360ed66c
   - enabled: 1
+    path: Assets/Scenes/SCN_Niveau3.unity
+    guid: 007e0a7d092b9894a8e0201299b6f7a2
+  - enabled: 1
     path: Assets/Scenes/SCN_NiveauTuto.unity
     guid: 7495988a2ef62404ab129e52ae826480
   m_configObjects: {}
