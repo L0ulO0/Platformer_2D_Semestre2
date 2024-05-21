@@ -229,8 +229,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 399654218}
   - {fileID: 431138310}
+  - {fileID: 399654218}
   - {fileID: 1071789624}
   m_Father: {fileID: 1449646808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -928,8 +928,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.929}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.4841, y: -261.794}
-  m_SizeDelta: {x: 159.5345, y: 54.6632}
+  m_AnchoredPosition: {x: 27.4841, y: -256.5745}
+  m_SizeDelta: {x: 159.5345, y: 56.7525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233086869
 MonoBehaviour:
@@ -955,7 +955,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.42352945, g: 0.011764707, b: 0.011764707, a: 0.03529412}
     m_HighlightedColor: {r: 0.42352945, g: 0.011764707, b: 0.011764707, a: 1}
     m_PressedColor: {r: 0.42352945, g: 0.011764707, b: 0.011764707, a: 1}
-    m_SelectedColor: {r: 0.4245283, g: 0.010012458, b: 0.010012458, a: 1}
+    m_SelectedColor: {r: 0.4245283, g: 0.010012458, b: 0.010012458, a: 0.6666667}
     m_DisabledColor: {r: 0.42352945, g: 0.011764707, b: 0.011764707, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1789,8 +1789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.179}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -412.80026, y: 72.602776}
-  m_SizeDelta: {x: 137.1163, y: 30.6623}
+  m_AnchoredPosition: {x: -412.80026, y: 77.07664}
+  m_SizeDelta: {x: 137.1163, y: 31.691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577569049
 MonoBehaviour:
@@ -1816,7 +1816,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.03529412}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_PressedColor: {r: 1, g: 0, b: 0, a: 0}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_SelectedColor: {r: 0.36078432, g: 0, b: 0, a: 0.6666667}
     m_DisabledColor: {r: 0.3962264, g: 0, b: 0, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1861,7 +1861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2586,7 +2586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067652881}
   - component: {fileID: 1067652880}
-  - component: {fileID: 1067652879}
+  - component: {fileID: 1067652882}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2594,26 +2594,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1067652879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067652878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1067652880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2626,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 577569047}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1067652881
@@ -2638,12 +2618,53 @@ Transform:
   m_GameObject: {fileID: 1067652878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.76874, y: 67.89436, z: 5.615577}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1384593724}
+  m_Father: {fileID: 1449646808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067652882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067652878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1071789623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3582,6 @@ Transform:
   m_Children:
   - {fileID: 397074069}
   - {fileID: 1991852213}
-  - {fileID: 1067652881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1389933348
@@ -3730,6 +3750,7 @@ Transform:
   - {fileID: 1973854531}
   - {fileID: 90942776}
   - {fileID: 657658961}
+  - {fileID: 1067652881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456233267
@@ -4898,7 +4919,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114121839}
-  m_LocalRotation: {x: -0, y: -0, z: -0.023320315, w: 0.9997281}
+  m_LocalRotation: {x: -0, y: -0, z: -0.009817363, w: 0.99995184}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.4029734, y: 3.4904108, z: 3.4904108}
   m_ConstrainProportionsScale: 0
@@ -4906,10 +4927,10 @@ RectTransform:
   - {fileID: 2039727921}
   - {fileID: 1510128079}
   m_Father: {fileID: 252837829}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.673}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.125}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 673.464, y: 4.804}
+  m_AnchoredPosition: {x: 673.464, y: 4.8039856}
   m_SizeDelta: {x: 181.398, y: 57.0903}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114121841
@@ -4934,10 +4955,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.4156863, g: 0, b: 0, a: 0.16862746}
-    m_HighlightedColor: {r: 0.4156863, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.4156863, g: 0, b: 0, a: 0.043137256}
     m_PressedColor: {r: 0.41509432, g: 0, b: 0, a: 0.12941177}
-    m_SelectedColor: {r: 0.4156863, g: 0, b: 0, a: 1}
-    m_DisabledColor: {r: 0.4156863, g: 0, b: 0, a: 0.019607844}
+    m_SelectedColor: {r: 0.4156863, g: 0, b: 0, a: 0.6666667}
+    m_DisabledColor: {r: 0.4156863, g: 0, b: 0, a: 0.07058824}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4981,7 +5002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.050980393}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
