@@ -20,8 +20,8 @@ public class Mouvement : MonoBehaviour
     [Header("statistic")]
     [SerializeField] bool Player_Run;
     [SerializeField] float m_Thrust = 12f;
-    [SerializeField] float GravityScale= 1f;
-    [SerializeField] float fallGravityScale = 3f;
+    [SerializeField] float GravityScale= 1.5f;
+    [SerializeField] float fallGravityScale = 5f;
     [SerializeField] float speed =100f;
 
 

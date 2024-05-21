@@ -22,7 +22,7 @@ public class Mouvement_2 : MonoBehaviour
     //[SerializeField] float m_Thrust = 12f;
     //[SerializeField] float GravityScale = 1f;
     //[SerializeField] float fallGravityScale = 3f;
-    [SerializeField] float speed = 50f;
+    [SerializeField] float speed = 80f;
 
 
 
