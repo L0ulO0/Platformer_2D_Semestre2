@@ -1857,8 +1857,8 @@ MonoBehaviour:
   Direction: 0
   Player_Run: 0
   m_Thrust: 13.5
-  GravityScale: 1.5
-  fallGravityScale: 4.5
+  GravityScale: 1.35
+  fallGravityScale: 7
   speed: 1000
   Freez: 0
   Player_animator: {fileID: 0}
@@ -14833,12 +14833,12 @@ PrefabInstance:
     - target: {fileID: 6893494979302107975, guid: 8119aba3c038d134ab9ee22b55f88d75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.04489
+      value: 50.8
       objectReference: {fileID: 0}
     - target: {fileID: 6893494979302107975, guid: 8119aba3c038d134ab9ee22b55f88d75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.374775
+      value: -25.84
       objectReference: {fileID: 0}
     - target: {fileID: 6893494979302107975, guid: 8119aba3c038d134ab9ee22b55f88d75,
         type: 3}
