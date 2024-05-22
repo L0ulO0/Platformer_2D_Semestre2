@@ -18,6 +18,7 @@ TagManager:
   - InteractUI_Hide
   - CheckPoint
   - InteractUI2
+  - Audio_screem
   layers:
   - Default
   - TransparentFX
