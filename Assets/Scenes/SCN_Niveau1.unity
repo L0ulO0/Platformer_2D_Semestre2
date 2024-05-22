@@ -1856,7 +1856,7 @@ MonoBehaviour:
   Direction: 0
   Player_Run: 0
   m_Thrust: 13.5
-  GravityScale: 1.5
+  GravityScale: 1
   fallGravityScale: 5
   speed: 1000
   Freez: 0
