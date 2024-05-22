@@ -15,7 +15,7 @@ public class cinematique_Out : MonoBehaviour
 
         if (changeTime < -0)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("SCN_NiveauTuto");
         }
 
     }
