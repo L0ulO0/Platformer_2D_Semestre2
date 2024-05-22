@@ -12,7 +12,7 @@ public class bouton_Start : MonoBehaviour
     public void PlayButton()
     {
 
-        SceneManager.LoadScene("SCN_NiveauTuto");
+        SceneManager.LoadScene("Cinematique_1");
         Debug.Log("load");
     }
 

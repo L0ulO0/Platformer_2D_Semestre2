@@ -283,7 +283,7 @@ public class Mouvement_2 : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+      //  Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 
 }
