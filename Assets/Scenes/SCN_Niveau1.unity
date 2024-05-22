@@ -1838,6 +1838,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 863197834}
+  - {fileID: 992222310}
   m_Father: {fileID: 1300231936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &342298320
@@ -1857,7 +1858,7 @@ MonoBehaviour:
   Player_Run: 0
   m_Thrust: 13.5
   GravityScale: 1.5
-  fallGravityScale: 5
+  fallGravityScale: 4.5
   speed: 1000
   Freez: 0
   Player_animator: {fileID: 0}
@@ -2685,8 +2686,8 @@ Transform:
   m_GameObject: {fileID: 586354389}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 201.88808, y: 29.960434, z: -0.04718685}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 201.88808, y: 27.7, z: -0.04718685}
+  m_LocalScale: {x: 1, y: 0.9375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1156738092}
@@ -11817,7 +11818,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 342298319}
   m_Lens:
-    FieldOfView: 64.19461
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -11844,12 +11845,12 @@ Transform:
   m_GameObject: {fileID: 992222308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4032936, y: 1.3867326, z: -10.91726}
+  m_LocalPosition: {x: 0, y: 2.5, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 933661996}
-  m_Father: {fileID: 1300231936}
+  m_Father: {fileID: 342298319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &999273230
 GameObject:
@@ -13806,7 +13807,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 342298319}
-  - {fileID: 992222310}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314292731
@@ -15864,7 +15864,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 64.19461
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
