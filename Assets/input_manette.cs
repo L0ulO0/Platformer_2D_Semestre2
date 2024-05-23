@@ -62,15 +62,6 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""21a688b1-6d1a-4fcb-aec0-8b8d148a7c27"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -91,7 +82,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -102,7 +93,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -113,7 +104,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -124,7 +115,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -135,7 +126,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -146,7 +137,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -157,7 +148,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -168,7 +159,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Hide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -179,7 +170,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Hide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -190,7 +181,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Phone"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -201,15 +192,43 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player"",
+                    ""groups"": """",
                     ""action"": ""Phone"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""27527b30-943d-4eb8-9e03-ae14375d13a2"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""f10ffc5a-1c9e-42f9-bf5a-beb2aba45a21"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""79280aab-bfae-41d6-b69d-53bdbc3d3661"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""29210d6c-18fa-40b1-bd80-f1d8d44a4db1"",
-                    ""path"": """",
+                    ""id"": ""936956f5-a366-46fe-9635-89daefb38fa7"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -220,13 +239,7 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": [
-        {
-            ""name"": ""Player"",
-            ""bindingGroup"": ""Player"",
-            ""devices"": []
-        }
-    ]
+    ""controlSchemes"": []
 }");
         // Mouvement
         m_Mouvement = asset.FindActionMap("Mouvement", throwIfNotFound: true);
@@ -234,7 +247,9 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
         m_Mouvement_Jump = m_Mouvement.FindAction("Jump", throwIfNotFound: true);
         m_Mouvement_Hide = m_Mouvement.FindAction("Hide", throwIfNotFound: true);
         m_Mouvement_Phone = m_Mouvement.FindAction("Phone", throwIfNotFound: true);
-        m_Mouvement_Interact = m_Mouvement.FindAction("Interact", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_Interact = m_Dialogue.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -300,7 +315,6 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
     private readonly InputAction m_Mouvement_Jump;
     private readonly InputAction m_Mouvement_Hide;
     private readonly InputAction m_Mouvement_Phone;
-    private readonly InputAction m_Mouvement_Interact;
     public struct MouvementActions
     {
         private @Input_manette m_Wrapper;
@@ -309,7 +323,6 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Mouvement_Jump;
         public InputAction @Hide => m_Wrapper.m_Mouvement_Hide;
         public InputAction @Phone => m_Wrapper.m_Mouvement_Phone;
-        public InputAction @Interact => m_Wrapper.m_Mouvement_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Mouvement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -331,9 +344,6 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
             @Phone.started += instance.OnPhone;
             @Phone.performed += instance.OnPhone;
             @Phone.canceled += instance.OnPhone;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IMouvementActions instance)
@@ -350,9 +360,6 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
             @Phone.started -= instance.OnPhone;
             @Phone.performed -= instance.OnPhone;
             @Phone.canceled -= instance.OnPhone;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IMouvementActions instance)
@@ -370,21 +377,61 @@ public partial class @Input_manette: IInputActionCollection2, IDisposable
         }
     }
     public MouvementActions @Mouvement => new MouvementActions(this);
-    private int m_PlayerSchemeIndex = -1;
-    public InputControlScheme PlayerScheme
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
+    private readonly InputAction m_Dialogue_Interact;
+    public struct DialogueActions
     {
-        get
+        private @Input_manette m_Wrapper;
+        public DialogueActions(@Input_manette wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Interact => m_Wrapper.m_Dialogue_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void AddCallbacks(IDialogueActions instance)
         {
-            if (m_PlayerSchemeIndex == -1) m_PlayerSchemeIndex = asset.FindControlSchemeIndex("Player");
-            return asset.controlSchemes[m_PlayerSchemeIndex];
+            if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+        }
+
+        private void UnregisterCallbacks(IDialogueActions instance)
+        {
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+        }
+
+        public void RemoveCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DialogueActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
         }
     }
+    public DialogueActions @Dialogue => new DialogueActions(this);
     public interface IMouvementActions
     {
         void OnRun(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnHide(InputAction.CallbackContext context);
         void OnPhone(InputAction.CallbackContext context);
+    }
+    public interface IDialogueActions
+    {
         void OnInteract(InputAction.CallbackContext context);
     }
 }

@@ -77,7 +77,6 @@ public class Dialogue_Manager : MonoBehaviour
 
     void EndDialogue()
     {
-
         animator.SetBool("BoolOpen", false); 
         Mouvement.CanMouv = true;
         Debug.Log("Fin du dialogue");

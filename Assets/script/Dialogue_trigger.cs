@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+using System;
 
 public class Dialogue_trigger : MonoBehaviour
 
 {
-    [SerializeField] Mouvement Mouvement;
+    public Mouvement Mouvement;
 
     public Dialogue dialogue;
 
@@ -19,20 +21,38 @@ public class Dialogue_trigger : MonoBehaviour
 
     private GameObject NextButton;
 
+    private Input_manette input_manette;
+
 
     private void Awake()
     {
+        input_manette = new Input_manette();
         InteractUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<TextMeshProUGUI>(); 
     }
 
+    //private void OnEnable()
+    //{
+    //    input_manette.Mouvement.Interact.Enable();
+
+    //    input_manette.Mouvement.Interact.performed += Interact;
+    //}
+
+    //public void Interact(InputAction.CallbackContext context)
+    //{
+    //    Mouvement.CanMouv = false;
+    //    TriggerDialogue();
+    //}
+
+    //private void OnDisable()
+    //{
+    //    input_manette.Mouvement.Interact.Disable();
+    //}
     void Update()
     {
-        if(isInRange && Input.GetKeyDown(KeyCode.E)) 
-        {
-            Mouvement.CanMouv = false;
-            TriggerDialogue();
-        }
+        
     }
+
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

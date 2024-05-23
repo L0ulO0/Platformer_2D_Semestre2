@@ -1997,6 +1997,7 @@ RectTransform:
   m_Children:
   - {fileID: 237363883}
   - {fileID: 264180802}
+  - {fileID: 1772348873}
   m_Father: {fileID: 1449646808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3750,7 +3751,6 @@ Transform:
   - {fileID: 1973854531}
   - {fileID: 90942776}
   - {fileID: 657658961}
-  - {fileID: 1772348873}
   - {fileID: 1067652881}
   - {fileID: 1468653398}
   m_Father: {fileID: 0}
@@ -4623,10 +4623,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1449646808}
+  m_Father: {fileID: 657658961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1772348874
 MonoBehaviour:
