@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class checkpoint : MonoBehaviour
 {
-
+    [SerializeField] SpawnPlayer spawnplayer; 
     [SerializeField] private Vector2 Respawn;
 
     [SerializeField] Transform IA;
@@ -11,9 +11,9 @@ public class checkpoint : MonoBehaviour
 
 
     void Start()
-    { 
-
-        Respawn = transform.position;
+    {
+        spawnplayer.transform.position = transform.position;
+        //Respawn = transform.position;
 
     }
     private void OnTriggerEnter2D(Collider2D other)
