@@ -89,10 +89,24 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
             Position_Control();
             Chase_Control();
         }
-
+        spriteManager();
         Is_Dead();
     }
 
+
+
+    void spriteManager()
+    {
+        if(_RigideBody.velocity.x < 0)
+        {
+            _SpriteRenderer.flipX = false;
+        }
+
+        else if (_RigideBody.velocity.x > 0)
+        {
+            _SpriteRenderer.flipX = true;
+        }
+    }
     // ***************************************************************************************** \\
     // Assign Methode
     // ***************************************************************************************** \\
@@ -163,8 +177,9 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
 
         if (Current_Patrol_Point == 0)
         {
+            _SpriteRenderer.flipX = false;
 
-            CleenSpeed = CleenSpeed * -1;
+             CleenSpeed = CleenSpeed * -1;
 
             if (Vector2.Distance(_Transform.position, Left_Point.position) < 0.25f)
             {
@@ -175,6 +190,7 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
 
         if (Current_Patrol_Point == 1)
         {
+             _SpriteRenderer.flipX = true;
 
             if (Vector2.Distance(_Transform.position, Right_Point.position) < 0.25f)
             {

@@ -14,6 +14,7 @@ public class Death : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("Hello");
             collision.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
 
             IA.transform.position = RespawnIA.transform.position;
