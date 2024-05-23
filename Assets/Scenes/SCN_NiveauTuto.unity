@@ -2104,7 +2104,7 @@ MonoBehaviour:
     - sssss
     - dsgsgadgf
     - TROIS???
-  dialogueManager: {fileID: 2026536345}
+  dialogueManager: {fileID: 1593190337}
   dialogueTrigger: {fileID: 442143069}
   dialogueUI: {fileID: 1403049103}
   Mouvement: {fileID: 342298320}
@@ -4975,7 +4975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb9a09b3fda1b245b50f6ad2d5611ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueTrigger: {fileID: 1286190946}
+  DialogueTrigger: {fileID: 0}
   animator: {fileID: 1403049108}
   nameText: {fileID: 1176801912}
   DialogueText: {fileID: 1273383823}
@@ -10706,6 +10706,7 @@ GameObject:
   - component: {fileID: 1959915445}
   - component: {fileID: 1959915443}
   - component: {fileID: 1959915446}
+  - component: {fileID: 1959915447}
   m_Layer: 0
   m_Name: PNJ_2
   m_TagString: Untagged
@@ -10846,6 +10847,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1959915447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959915441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac19c74bdb6f9f42a98445769e75aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: RENARD
+    sentences:
+    - 
+    - 
+  dialogueManager: {fileID: 0}
+  dialogueTrigger: {fileID: 1959915441}
+  dialogueUI: {fileID: 1403049103}
+  Mouvement: {fileID: 342298320}
+  inTrigger: 0
+  dialogueStarted: 0
+  player: {fileID: 1571015064}
 --- !u!1 &1998621715
 GameObject:
   m_ObjectHideFlags: 0
