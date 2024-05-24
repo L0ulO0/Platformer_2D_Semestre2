@@ -21,7 +21,7 @@ public class DialogueManager5 : MonoBehaviour
         instance = this;
         sentences = new Queue<string>();
     }
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue5 dialogue)
     {
         // CAN MOVE TO FALSE
         animator.SetBool("BoolOpen", true);

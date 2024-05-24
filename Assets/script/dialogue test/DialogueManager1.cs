@@ -21,15 +21,15 @@ public class DialogueManager1 : MonoBehaviour
         instance = this;
         sentences = new Queue<string>();
     }
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue1 dialogue1)
     {
         // CAN MOVE TO FALSE
         animator.SetBool("BoolOpen", true);
-        nameText.text = dialogue.name;
+        nameText.text = dialogue1.name;
 
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue1.sentences)
         {
             sentences.Enqueue(sentence);
         }
