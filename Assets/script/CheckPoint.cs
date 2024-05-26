@@ -21,25 +21,15 @@ public class checkpoint : MonoBehaviour
         {
 
 
-
-            /*Respawn = transform.position;
+            Respawn = transform.position;
             Debug.Log(" REZZ");
 
-
-
-            PlayerSpawn.position = transform.position;
-            Debug.Log("New Spawn");*/
 
         }
         else if (other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Prefab_ia"))
         {
-
-            transform.position = Respawn;
-
-            Debug.Log(" REZZ");
-            IA.transform.position = RespawnIA.transform.position; 
-          
-
+            PlayerSpawn.position = transform.position;
+            Debug.Log("New Spawn");
         }
 
     }
