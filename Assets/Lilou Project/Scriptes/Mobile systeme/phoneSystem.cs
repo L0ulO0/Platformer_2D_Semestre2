@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static Cinemachine.CinemachineOrbitalTransposer;
 
 public class phoneSystem : MonoBehaviour
 {
@@ -30,7 +32,21 @@ public class phoneSystem : MonoBehaviour
 
     // element
     [SerializeField] GameObject picture;
- 
+
+    // input manette
+    private Input_manette input_manette;
+
+    private void Awake()
+    {
+        input_manette = new Input_manette();
+    }
+
+    private void OnEnable()
+    {
+        input_manette.Mouvement.Phone.Enable();
+
+        input_manette.Mouvement.Phone.performed += Phone;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +57,13 @@ public class phoneSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Phone();
+        //Phone();
 
     }
 
-    public void Phone()
-    {
-        if (Input.GetKeyDown(KeyCode.Keypad7))
+    private void Phone (InputAction.CallbackContext context)
+    { 
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if(phoneOpen)
             {

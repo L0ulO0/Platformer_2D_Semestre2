@@ -79,19 +79,19 @@ public class Mouvement : MonoBehaviour
         input_manette.Mouvement.Run.Enable();
         input_manette.Mouvement.Jump.Enable();
         input_manette.Mouvement.Hide.Enable();
-        input_manette.Mouvement.Phone.Enable();
+       // input_manette.Mouvement.Phone.Enable();
 
         input_manette.Mouvement.Jump.performed += Jump;
         input_manette.Mouvement.Hide.performed += Hide;
-        input_manette.Mouvement.Phone.performed += Phone;
+       // input_manette.Mouvement.Phone.performed += Phone;
     }
 
    
 
-    private void Phone(InputAction.CallbackContext context)
-    {
+   // private void Phone(InputAction.CallbackContext context)
+    //{
        
-    }
+    //}
 
     private void OnDisable()
     {
