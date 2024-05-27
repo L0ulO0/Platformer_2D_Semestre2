@@ -28,7 +28,7 @@ public class checkpoint : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Prefab_ia"))
         {
-            PlayerSpawn.position = transform.position;
+           // PlayerSpawn.position = transform.position;
             Debug.Log("New Spawn");
         }
 

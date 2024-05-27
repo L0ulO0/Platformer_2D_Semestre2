@@ -19,6 +19,8 @@ TagManager:
   - CheckPoint
   - InteractUI2
   - Audio_screem
+  - Cam1
+  - Cam2
   layers:
   - Default
   - TransparentFX

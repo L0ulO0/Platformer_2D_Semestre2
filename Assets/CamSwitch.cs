@@ -7,14 +7,40 @@ public class CamSwitch : MonoBehaviour
 {
     [SerializeField] GameObject triggercam1;
     [SerializeField] GameObject triggercam2;
+
     [SerializeField] CinemachineVirtualCamera Cam1;
     [SerializeField] CinemachineVirtualCamera Cam2;
+  
+    private bool camswitch = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        triggercam2.SetActive(true);
-        triggercam1.SetActive(false);
-        Cam1.Priority = 1;
-        Cam2.Priority = 100;
+       
+
+
+             if (!camswitch)
+             {
+                    triggercam2.SetActive(true);
+                    triggercam1.SetActive(false);
+                     Cam1.Priority = 1;
+                     Cam2.Priority = 100;
+
+                 camswitch = true;
+
+             }
+             else if(camswitch)
+             {
+                    triggercam2.SetActive(false);
+                    triggercam1.SetActive(true);
+                      Cam1.Priority = 100;
+                      Cam2.Priority = 1;
+
+                 camswitch = false;
+
+             } 
+         
+        
+        
+     
     }
 }
