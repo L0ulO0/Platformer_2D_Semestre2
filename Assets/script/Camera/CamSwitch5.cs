@@ -17,12 +17,13 @@ public class CamSwitch5 : MonoBehaviour
     {
 
 
+        if (collision.tag == "Player")
+        {
 
-
-        triggercam6.SetActive(true);
+            triggercam6.SetActive(true);
             Cam6.Priority = 100;
 
-       
+        }
     }
    
 }

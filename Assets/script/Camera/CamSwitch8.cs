@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CamSwitch4 : MonoBehaviour
+public class CamSwitch8 : MonoBehaviour
 {
 
-    [SerializeField] GameObject triggercam5;
+
+    [SerializeField] GameObject triggercam4;
  
- 
-    [SerializeField] CinemachineVirtualCamera Cam5;
   
+    [SerializeField] CinemachineVirtualCamera Cam4;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,15 +19,13 @@ public class CamSwitch4 : MonoBehaviour
         if (collision.tag == "Player")
         {
 
+            triggercam4.SetActive(true);
 
 
-            triggercam5.SetActive(true);
-            Cam5.Priority = 100;
-
+            Cam4.Priority = 100;
 
         }
 
-        
     }
    
 }

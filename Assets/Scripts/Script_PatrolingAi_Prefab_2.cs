@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
 {
@@ -235,7 +236,7 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
         if (Is_Close)
         {
 
-            Target_Transform.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+            SceneManager.LoadScene("SCN_Niveau3");
 
         }
 

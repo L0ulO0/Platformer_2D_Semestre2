@@ -1,5 +1,10 @@
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class checkpoint : MonoBehaviour
@@ -18,22 +23,23 @@ public class checkpoint : MonoBehaviour
     {
 
 
-       /* if (other.gameObject.CompareTag("CheckPoint"))
+        /* if (other.gameObject.CompareTag("CheckPoint"))
+         {
+
+
+             Respawn = transform.position;
+             Debug.Log(" REZZ");*/
+
+
+        if (gameObject.CompareTag("Player"))
         {
-
-
-            Respawn = transform.position;
-            Debug.Log(" REZZ");
-
-
-        }*/
-       if (other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Prefab_ia"))
-        {
-           // PlayerSpawn.position = transform.position;
-            Debug.Log("New Spawn");
-            SceneManager.LoadScene("SCN_NiveauTuto");
+            if (other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Prefab_ia"))
+            {
+                // PlayerSpawn.position = transform.position;
+                Debug.Log("New Spawn");
+                SceneManager.LoadScene("SCN_NiveauTuto");
+            }
         }
-
     }
 
 }

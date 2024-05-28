@@ -16,17 +16,18 @@ public class CamSwitch6 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+        if (collision.tag == "Player")
+        {
 
 
 
-       
-        triggercam1.SetActive(true);
-        Cam1.Priority = 100;
-      
-
-   
+            triggercam1.SetActive(true);
+            Cam1.Priority = 100;
 
 
+
+
+        }
 
 
 

@@ -13,6 +13,7 @@ public class phoneSystem : MonoBehaviour
     [SerializeField] bool phoneOpen = false;
 
     [SerializeField] Mouvement mouvement;
+    [SerializeField] Mouvement_2 mouvement2;
 
     // trigger notification
 
@@ -91,6 +92,7 @@ public class phoneSystem : MonoBehaviour
     void PhoneOpen()
     {
         mouvement.CanMouv = false;
+        mouvement2.CanMouv = false;
         phone.SetActive(true);
         phoneSMS.SetActive(false);
         Time.timeScale = 0;
@@ -104,7 +106,12 @@ public class phoneSystem : MonoBehaviour
     void PhoneClose()
     {
         phoneSMS.SetActive(false);
+        if ((!mouvement.sheHide) && (!mouvement2.sheHide)) 
+        {
+        mouvement2.CanMouv = true;
         mouvement.CanMouv = true;
+        }
+      
         phone.SetActive(false);
         Time.timeScale = 1;
         phoneOpen = false;
