@@ -98,7 +98,7 @@ public class Mouvement : MonoBehaviour
         input_manette.Mouvement.Run.Disable();
         input_manette.Mouvement.Jump.Disable();
         input_manette.Mouvement.Hide.Disable();
-        input_manette.Mouvement.Phone.Disable();
+       // input_manette.Mouvement.Phone.Disable();
     }
 
     void Start()
