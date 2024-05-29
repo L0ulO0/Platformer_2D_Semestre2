@@ -11,12 +11,16 @@ public class phoneSystem : MonoBehaviour
 
     [SerializeField] GameObject phone;
     [SerializeField] GameObject phoneSMS;
+    [SerializeField] GameObject phoneGalerie;
+    [SerializeField] GameObject phoneSettings;
     //[SerializeField] GameObject phoneMessage;
     [SerializeField] GameObject Message1;
     [SerializeField] GameObject Boutton1;
+
     [SerializeField] Image NewSms;
     [SerializeField] Sprite Sprite1;
     [SerializeField] Sprite Sprite2;
+    [SerializeField] GameObject BouttonSms;
 
     [SerializeField] bool phoneOpen = false;
 
@@ -47,6 +51,7 @@ public class phoneSystem : MonoBehaviour
     // input manette
     private Input_manette input_manette;
 
+
     private void Awake()
     {
         input_manette = new Input_manette();
@@ -65,12 +70,14 @@ public class phoneSystem : MonoBehaviour
     void Start()
     {
         NewSms.sprite = Sprite1;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
         //Phone();
+       
 
     }
 
@@ -104,6 +111,7 @@ public class phoneSystem : MonoBehaviour
         mouvement.CanMouv = false;
         mouvement2.CanMouv = false;
         phone.SetActive(true);
+        phoneGalerie.SetActive(false);
         phoneSMS.SetActive(false);
         //phoneMessage.SetActive(false);
         Time.timeScale = 0;
@@ -134,6 +142,8 @@ public class phoneSystem : MonoBehaviour
 
     public void OpenPicture()
     {
+        phoneSMS.SetActive(false);
+        phoneGalerie.SetActive(true);
         picture.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
@@ -144,8 +154,10 @@ public class phoneSystem : MonoBehaviour
     public void OpenSms()
     {
         phone.SetActive(false);
+        phone.SetActive(false);
         phoneSMS.SetActive(true);
-       // phoneMessage.SetActive(false);
+        phoneSettings.SetActive(false);
+        // phoneMessage.SetActive(false);
         picture.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
@@ -155,7 +167,11 @@ public class phoneSystem : MonoBehaviour
 
     public void OpenCalll()
     {
-        picture.SetActive(true);
+        phoneGalerie.SetActive(false);
+        phone.SetActive(false);
+        phoneSMS.SetActive(false);
+        phoneSettings.SetActive(true);
+        picture.SetActive(false);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
         callButton.SetActive(false);
@@ -185,15 +201,17 @@ public class phoneSystem : MonoBehaviour
 
     public void Message()
     {
-      NewSms.sprite = Sprite2;
+      
+        NewSms.sprite = Sprite2;
         phone.SetActive(false);
-       // phoneSMS.SetActive(false);
+        phoneSMS.SetActive(true);
         //phoneMessage.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
         callButton.SetActive(false);
-        Boutton1.SetActive(false);
 
+        BouttonSms.SetActive(false);
+      
 
 
     }
