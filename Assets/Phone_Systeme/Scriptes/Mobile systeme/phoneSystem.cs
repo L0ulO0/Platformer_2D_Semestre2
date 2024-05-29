@@ -11,8 +11,13 @@ public class phoneSystem : MonoBehaviour
 
     [SerializeField] GameObject phone;
     [SerializeField] GameObject phoneSMS;
-    [SerializeField] GameObject phoneMessage;
+    //[SerializeField] GameObject phoneMessage;
     [SerializeField] GameObject Message1;
+    [SerializeField] GameObject Boutton1;
+    [SerializeField] Image NewSms;
+    [SerializeField] Sprite Sprite1;
+    [SerializeField] Sprite Sprite2;
+
     [SerializeField] bool phoneOpen = false;
 
     [SerializeField] Mouvement mouvement;
@@ -59,7 +64,7 @@ public class phoneSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        NewSms.sprite = Sprite1;
     }
 
     // Update is called once per frame
@@ -93,12 +98,14 @@ public class phoneSystem : MonoBehaviour
 
 
     void PhoneOpen()
-    {
+    {  
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Boutton1);
         mouvement.CanMouv = false;
         mouvement2.CanMouv = false;
         phone.SetActive(true);
         phoneSMS.SetActive(false);
-        phoneMessage.SetActive(false);
+        //phoneMessage.SetActive(false);
         Time.timeScale = 0;
         phoneOpen = true;
         pictureButton.SetActive(true);
@@ -109,8 +116,7 @@ public class phoneSystem : MonoBehaviour
 
     void PhoneClose()
     {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(phone);
+        
         phoneSMS.SetActive(false);
         if ((!mouvement.sheHide) && (!mouvement2.sheHide)) 
         {
@@ -139,7 +145,7 @@ public class phoneSystem : MonoBehaviour
     {
         phone.SetActive(false);
         phoneSMS.SetActive(true);
-        phoneMessage.SetActive(false);
+       // phoneMessage.SetActive(false);
         picture.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
@@ -162,7 +168,7 @@ public class phoneSystem : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(Message1);
         phone.SetActive(false);
         phoneSMS.SetActive(true);
-        phoneMessage.SetActive(false);
+        //phoneMessage.SetActive(false);
         SMS1.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
@@ -179,13 +185,17 @@ public class phoneSystem : MonoBehaviour
 
     public void Message()
     {
-      
+      NewSms.sprite = Sprite2;
         phone.SetActive(false);
-        phoneSMS.SetActive(false);
-        phoneMessage.SetActive(true);
+       // phoneSMS.SetActive(false);
+        //phoneMessage.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
         callButton.SetActive(false);
+        Boutton1.SetActive(false);
+
+
+
     }
 
 

@@ -1627,7 +1627,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phone: {fileID: 1802010637}
   phoneSMS: {fileID: 2040827268}
-  phoneMessage: {fileID: 1645437455}
+  Message1: {fileID: 0}
+  Boutton1: {fileID: 0}
+  NewSms: {fileID: 2040827270}
+  Sprite1: {fileID: 21300000, guid: a1a033dbf56507f42823a15fae48a7c1, type: 3}
+  Sprite2: {fileID: 21300000, guid: 0d7531ad497741c4fb0801d63047d7d6, type: 3}
   phoneOpen: 0
   mouvement: {fileID: 1844144499}
   mouvement2: {fileID: 1914059759}
@@ -5644,7 +5648,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phone: {fileID: 1802010637}
   phoneSMS: {fileID: 2040827268}
-  phoneMessage: {fileID: 1645437455}
+  Message1: {fileID: 255786032}
+  Boutton1: {fileID: 928611574}
+  NewSms: {fileID: 1575551047}
+  Sprite1: {fileID: 21300000, guid: a1a033dbf56507f42823a15fae48a7c1, type: 3}
+  Sprite2: {fileID: 21300000, guid: 0d7531ad497741c4fb0801d63047d7d6, type: 3}
   phoneOpen: 0
   mouvement: {fileID: 1844144499}
   mouvement2: {fileID: 1914059759}
@@ -5730,10 +5738,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1645437456}
   - {fileID: 2040827269}
   - {fileID: 1802010638}
   - {fileID: 1923917552}
+  - {fileID: 1575551048}
   m_Father: {fileID: 884407671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7632,6 +7640,41 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1575551047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575551048}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1575551048
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575551047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1095506324}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1576697905
 GameObject:
   m_ObjectHideFlags: 0
@@ -8154,81 +8197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d290c4e981bb5114589270ef10c04e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1645437455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1645437456}
-  - component: {fileID: 1645437458}
-  - component: {fileID: 1645437457}
-  m_Layer: 5
-  m_Name: PhoneMessage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1645437456
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645437455}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16.68705, y: 9.71266, z: 9.3616}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1095506324}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29, y: -109}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1645437457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645437455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0d7531ad497741c4fb0801d63047d7d6, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1645437458
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645437455}
-  m_CullTransparentMesh: 1
 --- !u!1 &1746738211
 GameObject:
   m_ObjectHideFlags: 0
@@ -11360,7 +11328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2040827269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11381,7 +11349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29.217392, y: -98.086975}
+  m_AnchoredPosition: {x: -29, y: -106}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040827270
