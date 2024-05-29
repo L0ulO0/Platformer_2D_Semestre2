@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static Cinemachine.CinemachineOrbitalTransposer;
@@ -11,6 +12,7 @@ public class phoneSystem : MonoBehaviour
     [SerializeField] GameObject phone;
     [SerializeField] GameObject phoneSMS;
     [SerializeField] GameObject phoneMessage;
+    [SerializeField] GameObject Message1;
     [SerializeField] bool phoneOpen = false;
 
     [SerializeField] Mouvement mouvement;
@@ -107,6 +109,8 @@ public class phoneSystem : MonoBehaviour
 
     void PhoneClose()
     {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(phone);
         phoneSMS.SetActive(false);
         if ((!mouvement.sheHide) && (!mouvement2.sheHide)) 
         {
@@ -153,6 +157,9 @@ public class phoneSystem : MonoBehaviour
 
     public void Sms()
     {
+        
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Message1);
         phone.SetActive(false);
         phoneSMS.SetActive(true);
         phoneMessage.SetActive(false);
@@ -172,6 +179,7 @@ public class phoneSystem : MonoBehaviour
 
     public void Message()
     {
+      
         phone.SetActive(false);
         phoneSMS.SetActive(false);
         phoneMessage.SetActive(true);
