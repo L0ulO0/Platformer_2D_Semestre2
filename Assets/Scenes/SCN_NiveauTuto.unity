@@ -3584,8 +3584,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phone: {fileID: 1441744808}
   phoneSMS: {fileID: 1180429454}
+  phoneMessage: {fileID: 0}
   phoneOpen: 0
   mouvement: {fileID: 342298320}
+  mouvement2: {fileID: 0}
   triggernotification: {fileID: 1702986415}
   pictureButton: {fileID: 1579077891}
   smsButton: {fileID: 561648036}

@@ -10,6 +10,7 @@ public class phoneSystem : MonoBehaviour
 
     [SerializeField] GameObject phone;
     [SerializeField] GameObject phoneSMS;
+    [SerializeField] GameObject phoneMessage;
     [SerializeField] bool phoneOpen = false;
 
     [SerializeField] Mouvement mouvement;
@@ -95,6 +96,7 @@ public class phoneSystem : MonoBehaviour
         mouvement2.CanMouv = false;
         phone.SetActive(true);
         phoneSMS.SetActive(false);
+        phoneMessage.SetActive(false);
         Time.timeScale = 0;
         phoneOpen = true;
         pictureButton.SetActive(true);
@@ -133,6 +135,7 @@ public class phoneSystem : MonoBehaviour
     {
         phone.SetActive(false);
         phoneSMS.SetActive(true);
+        phoneMessage.SetActive(false);
         picture.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
@@ -152,6 +155,7 @@ public class phoneSystem : MonoBehaviour
     {
         phone.SetActive(false);
         phoneSMS.SetActive(true);
+        phoneMessage.SetActive(false);
         SMS1.SetActive(true);
         pictureButton.SetActive(false);
         smsButton.SetActive(false);
@@ -166,7 +170,15 @@ public class phoneSystem : MonoBehaviour
 
     }
 
-
+    public void Message()
+    {
+        phone.SetActive(false);
+        phoneSMS.SetActive(false);
+        phoneMessage.SetActive(true);
+        pictureButton.SetActive(false);
+        smsButton.SetActive(false);
+        callButton.SetActive(false);
+    }
 
 
 

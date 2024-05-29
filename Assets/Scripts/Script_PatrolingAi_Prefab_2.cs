@@ -100,12 +100,12 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
     {
         if(_RigideBody.velocity.x < 0)
         {
-            _SpriteRenderer.flipX = false;
+            _SpriteRenderer.flipX = true;
         }
 
         else if (_RigideBody.velocity.x > 0)
         {
-            _SpriteRenderer.flipX = true;
+            _SpriteRenderer.flipX = false;
         }
     }
     // ***************************************************************************************** \\

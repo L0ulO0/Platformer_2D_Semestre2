@@ -25,8 +25,8 @@ public class bouton_Start : MonoBehaviour
 
     public void Back()
     {
-        //MainCanvas.SetActive(true);
-        //Pancarte.SetActive(true);
+       // MainCanvas.SetActive(true);
+       // Pancarte.SetActive(true);
         //OptionCanvas.SetActive(false);
         SceneManager.LoadScene("MainMenu");
     }
