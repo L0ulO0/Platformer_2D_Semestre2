@@ -182,6 +182,7 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
 
              CleenSpeed = CleenSpeed * -1;
 
+            //detection point
             if (Vector2.Distance(_Transform.position, Left_Point.position) < 1f)
             {
 
@@ -193,6 +194,7 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
         {
              _SpriteRenderer.flipX = true;
 
+            //detection point
             if (Vector2.Distance(_Transform.position, Right_Point.position) < 1f)
             {
 
