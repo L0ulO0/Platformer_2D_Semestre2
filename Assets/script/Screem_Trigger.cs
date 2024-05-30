@@ -17,11 +17,13 @@ public class Screem_Trigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (!alreadyPlayed)
+        if (collision.tag == "Player")
         {
-            audio.PlayOneShot(sfx, volume);
-            Debug.Log("Screem");
+            if (!alreadyPlayed)
+            {
+                audio.PlayOneShot(sfx, volume);
+                Debug.Log("Screem");
+            }
         }
     }
 }

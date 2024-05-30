@@ -182,7 +182,7 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
 
              CleenSpeed = CleenSpeed * -1;
 
-            if (Vector2.Distance(_Transform.position, Left_Point.position) < 0.25f)
+            if (Vector2.Distance(_Transform.position, Left_Point.position) < 1f)
             {
 
                 Current_Patrol_Point = 1;
@@ -193,7 +193,7 @@ public class Script_PatrolingAi_Prefab_2 : MonoBehaviour
         {
              _SpriteRenderer.flipX = true;
 
-            if (Vector2.Distance(_Transform.position, Right_Point.position) < 0.25f)
+            if (Vector2.Distance(_Transform.position, Right_Point.position) < 1f)
             {
 
                 Current_Patrol_Point = 0;

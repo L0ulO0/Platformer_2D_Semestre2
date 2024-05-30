@@ -70,7 +70,6 @@ public class phoneSystem : MonoBehaviour
     void Start()
     {
         NewSms.sprite = Sprite1;
-      
     }
 
     // Update is called once per frame
@@ -114,7 +113,7 @@ public class phoneSystem : MonoBehaviour
         phoneGalerie.SetActive(false);
         phoneSMS.SetActive(false);
         //phoneMessage.SetActive(false);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         phoneOpen = true;
         pictureButton.SetActive(true);
         smsButton.SetActive(true);
@@ -124,7 +123,8 @@ public class phoneSystem : MonoBehaviour
 
     void PhoneClose()
     {
-        
+        phoneGalerie.SetActive(false);
+        phoneSettings.SetActive(false);
         phoneSMS.SetActive(false);
         if ((!mouvement.sheHide) && (!mouvement2.sheHide)) 
         {
@@ -133,7 +133,7 @@ public class phoneSystem : MonoBehaviour
         }
       
         phone.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         phoneOpen = false;
         picture.SetActive(false);
         SMS1.SetActive(false);
@@ -142,6 +142,7 @@ public class phoneSystem : MonoBehaviour
 
     public void OpenPicture()
     {
+        phoneSettings.SetActive(false);
         phoneSMS.SetActive(false);
         phoneGalerie.SetActive(true);
         picture.SetActive(true);
